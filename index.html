@@ -390,3 +390,281 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Jan Jansen - Modern Minimalist</title>
+    <style>
+        :root {
+            /* De donkergroen/turquoise accentkleur */
+            --accent: #0f766e; 
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-sidebar: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #e9ecef;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar {
+            width: 33%;
+            background-color: var(--bg-sidebar);
+            padding: 45px 30px;
+            box-sizing: border-box;
+            border-right: 1px solid var(--border-color);
+        }
+        
+        .main {
+            width: 67%;
+            padding: 45px 40px;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            margin: 0 0 5px 0;
+            font-size: 38px;
+            color: var(--accent);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        
+        h2 {
+            font-size: 15px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .sidebar h2 {
+            margin-top: 35px;
+        }
+        
+        .sidebar-block {
+            margin-bottom: 25px;
+        }
+        
+        .item-text {
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-main);
+        }
+        
+        ul {
+            padding-left: 16px;
+            margin-top: 5px;
+            margin-bottom: 0;
+            color: var(--text-main);
+            font-size: 13px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        .profile-text {
+            font-size: 14px;
+            margin-bottom: 35px;
+            text-align: justify;
+            color: var(--text-main);
+        }
+        
+        .job-block {
+            margin-bottom: 22px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+        
+        .job-meta {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .job-company {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .job-desc {
+            font-size: 13px;
+        }
+        
+        @media print {
+            body { background: white; margin: 0; }
+            .page { margin: 0; box-shadow: none; width: 210mm; height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="sidebar">
+            <h2 style="margin-top: 0;">Contact</h2>
+            <div class="sidebar-block">
+                <div class="item-text"><span class="item-title">Woonplaats:</span> Teteringen</div>
+                <div class="item-text"><span class="item-title">Leeftijd:</span> 39 jaar</div>
+                <div class="item-text"><span class="item-title">Email:</span> ...@ymail.com</div>
+            </div>
+
+            <h2>Kernkwaliteiten</h2>
+            <div class="sidebar-block">
+                <ul>
+                    <li>Projectcoördinatie & procesverbetering</li>
+                    <li>Probleemoplossend & analytisch inzicht</li>
+                    <li>Sociaal, communicatief & empathisch</li>
+                    <li>Proactief & snel zelflerend</li>
+                </ul>
+            </div>
+
+            <h2>IT Vaardigheden</h2>
+            <div class="sidebar-block">
+                <ul>
+                    <li>No/low code development & AI-tools</li>
+                    <li>Basis Python, JavaScript & API's</li>
+                    <li>Software testing & DevOps-basis</li>
+                    <li>Snel eigen maken van systemen</li>
+                </ul>
+            </div>
+
+            <h2>Opleidingen</h2>
+            <div class="sidebar-block">
+                <div class="item-title">Bachelor Communicatie (IEMES)</div>
+                <div class="item-text" style="color: var(--text-light); font-size: 12px;">Fontys Academy, Tilburg | 2010 - 2015</div>
+                
+                <div class="item-title" style="margin-top: 10px;">MBO Hand & Design</div>
+                <div class="item-text" style="color: var(--text-light); font-size: 12px;">Helicon, Den Bosch | 2004 - 2008</div>
+            </div>
+            
+            <h2>Interesses</h2>
+            <div class="sidebar-block">
+                <ul>
+                    <li>Festivals bezoeken</li>
+                    <li>Eropuit met de camper</li>
+                    <li>Wandelen in het bos</li>
+                    <li>Vintage design restauratie</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>Jan Jansen</h1>
+            <div class="subtitle">Gedreven professional | Communicatie, IT & Analyse</div>
+
+            <h2>Profiel</h2>
+            <div class="profile-text">
+                Gedreven professional met een sterke basis in communicatie (IEMES) en een ondernemende instelling. Ik ben sociaal, analytisch en sterk in het vertalen van behoeften naar praktische oplossingen. Nieuwe systemen en complexe materie maak ik mij razendsnel eigen. Of het nu gaat om het coördineren van projecten, het doorvoeren van verbeteringen of het voeren van een goed gesprek: ik pak het resultaatgericht en met een gezonde dosis humor aan. In mijn vrije tijd laad ik graag op door naar festivals te gaan, er met de camper op uit te trekken of een stevige wandeling in het bos te maken.
+            </div>
+
+            <h2>Werkervaring</h2>
+            
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Kwaliteitscontroleur (Chauffeur)</div>
+                    <div class="job-meta">2024 - 2025</div>
+                </div>
+                <div class="job-company">SGS food analytics</div>
+                <div class="job-desc">
+                    Zelfstandige chauffeursfunctie waarbij ik op locatie werkte. Uitvoeren van kwaliteitscontroles en monsternames volgens vastgelegde protocollen. Signaleren van afwijkingen en zorgdragen voor betrouwbare dataverwerking.
+                </div>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Content- en Projectbeheerder</div>
+                    <div class="job-meta">2022 - 2024</div>
+                </div>
+                <div class="job-company">Xaurum Software</div>
+                <div class="job-desc">
+                    Verantwoordelijk voor contentbeheer en afstemming met stakeholders. Coördineren van (deel)projecten met het ontwikkelteam en bewaken van de planning.
+                </div>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Ondernemer (Vintage audio & design)</div>
+                    <div class="job-meta">2022 - Heden</div>
+                </div>
+                <div class="job-company">De oude school</div>
+                <div class="job-desc">
+                    Restauratie en in- en verkoop van vintage audioapparatuur en designmeubels. Beheren van het volledige traject: inkoop, diagnose, reparatie, testen en klantcontact met een sterke focus op esthetische afwerking.
+                </div>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Product Owner Digitaal Platform & App</div>
+                    <div class="job-meta">2019 - 2022</div>
+                </div>
+                <div class="job-company">Quiet Nederland</div>
+                <div class="job-desc">
+                    Verantwoordelijk voor ontwikkeling en onderhoud van platform en app. Vertalen van gebruikersbehoeften naar concrete features, beheren van de backlog en bewaken van voortgang en kwaliteit.
+                </div>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <div class="job-title">Business Owner & R&D Ontwikkelaar</div>
+                    <div class="job-meta">2014 - 2019</div>
+                </div>
+                <div class="job-company">Lach Je Lens</div>
+                <div class="job-desc">
+                    Ontwerpen, ontwikkelen en testen van apparatuur inclusief hardware-software-integratie. Foutanalyse en iteratieve verbeteringen op basis van gebruikerstesten.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
