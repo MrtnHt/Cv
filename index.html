@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Martijn Luijken - Modern Minimalist</title>
-    <!-- Gebruik van Inter font voor een moderne, zakelijke uitstraling -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -34,6 +33,358 @@
         /* Container geoptimaliseerd voor A4 (210mm x 297mm) */
         .cv-container {
             width: 210mm;
+            min-height: 297mm;
+            background: var(--white);
+            margin: 0 auto;
+            display: flex;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 33%;
+            background-color: var(--bg-sidebar);
+            padding: 50px 30px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        /* Main Content Styling */
+        .main {
+            width: 67%;
+            padding: 50px 45px;
+        }
+
+        /* Koppen */
+        h1 {
+            font-size: 34px;
+            color: var(--accent);
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        h2 {
+            font-size: 14px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 6px;
+            margin-top: 35px;
+            margin-bottom: 18px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            border-bottom-color: var(--border-color);
+            display: block;
+        }
+
+        .sidebar h2:not(:first-child) {
+            margin-top: 40px;
+        }
+
+        /* Informatie Blokken */
+        .info-row {
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        .info-label {
+            font-weight: 700;
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            color: var(--text-light);
+        }
+
+        /* Lijsten */
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            font-size: 12.5px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            color: var(--text-main);
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Werkervaring Items */
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .exp-date {
+            font-size: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .exp-company {
+            font-size: 13px;
+            color: var(--accent);
+            font-style: italic;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .exp-desc {
+            font-size: 12.5px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        .profile-text {
+            font-size: 13.5px;
+            color: var(--text-main);
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Opleidingen */
+        .edu-item {
+            margin-bottom: 12px;
+        }
+
+        .edu-name {
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .edu-meta {
+            font-size: 11.5px;
+            color: var(--text-light);
+        }
+
+        /* Tags voor Interesses */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 11px;
+            background: #e2e8f0;
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Print Media Queries */
+        @media print {
+            body { background: white; padding: 0; }
+            .cv-container { margin: 0; box-shadow: none; width: 100%; height: 100%; }
+            .print-btn { display: none; }
+            .experience-item { page-break-inside: avoid; }
+        }
+
+        /* Responsive voor mobiel scherm */
+        @media (max-width: 210mm) {
+            body { padding: 10px; }
+            .cv-container { width: 100%; flex-direction: column; min-height: auto; }
+            .sidebar, .main { width: 100%; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--border-color); }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-10 0v4h8v-4m-8-4h8"></path></svg>
+        Opslaan als PDF
+    </button>
+
+    <div class="cv-container">
+        <aside class="sidebar">
+            <h2 style="margin-top: 0;">Contact</h2>
+            <div class="info-row">
+                <span class="info-label">Woonplaats</span>
+                <span class="info-value">Teteringen</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Leeftijd</span>
+                <span class="info-value">39 jaar</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Email</span>
+                <span class="info-value">martijnluijken86@gmail.com</span>
+            </div>
+
+            <h2>Kernkwaliteiten</h2>
+            <ul class="bullet-list">
+                <li>Projectcoördinatie & procesverbetering</li>
+                <li>Probleemoplossend & analytisch inzicht</li>
+                <li>Sociaal, communicatief & empathisch</li>
+                <li>Proactief & snel zelflerend</li>
+            </ul>
+
+            <h2>IT Vaardigheden</h2>
+            <ul class="bullet-list">
+                <li>No/low code development & AI-tools</li>
+                <li>Basis Python, JavaScript & API's</li>
+                <li>Software testing & DevOps-basis</li>
+                <li>Snel eigen maken van systemen</li>
+            </ul>
+
+            <h2>Opleidingen</h2>
+            <div class="edu-item">
+                <div class="edu-name">Bachelor Communicatie (IEMES)</div>
+                <div class="edu-meta">Fontys Academy, Tilburg | 2010 - 2015</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-name">MBO Hand & Design</div>
+                <div class="edu-meta">Helicon, Den Bosch | 2004 - 2008</div>
+            </div>
+
+            <h2>Interesses</h2>
+            <div class="tag-container">
+                <span class="tag">Psychologie</span>
+                <span class="tag">AI & Coding</span>
+                <span class="tag">Vintage design restauratie</span>
+                <span class="tag">Wandelen in het bos</span>
+                <span class="tag">Camper</span>
+                <span class="tag">Festivals bezoeken</span>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header>
+                <h1>Martijn Luijken</h1>
+                <div class="subtitle">Gedreven professional | Communicatie, IT & Analyse</div>
+            </header>
+
+            <section>
+                <h2>Profiel</h2>
+                <p class="profile-text">
+                    Gedreven professional met een sterke basis in communicatie (IEMES) en een ondernemende instelling. Ik ben sociaal, analytisch en sterk in het vertalen van behoeften naar praktische oplossingen. Nieuwe systemen en complexe materie maak ik mij razendsnel eigen. Of het nu gaat om het coördineren van projecten, het doorvoeren van verbeteringen of het voeren van een goed gesprek: ik pak het resultaatgericht en met een gezonde dosis humor aan. In mijn vrije tijd laad ik graag op door naar festivals te gaan, er met de camper op uit te trekken of een stevige wandeling in het bos te maken.
+                </p>
+            </section>
+
+            <section>
+                <h2>Werkervaring</h2>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Kwaliteitscontroleur (Chauffeur)</span>
+                        <span class="exp-date">2024 - 2025</span>
+                    </div>
+                    <span class="exp-company">SGS food analytics</span>
+                    <p class="exp-desc">Zelfstandige chauffeursfunctie waarbij ik op locatie werkte. Uitvoeren van kwaliteitscontroles en monsternames volgens vastgelegde protocollen. Signaleren van afwijkingen en zorgdragen voor betrouwbare dataverwerking.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Content- en Projectbeheerder</span>
+                        <span class="exp-date">2022 - 2024</span>
+                    </div>
+                    <span class="exp-company">Xaurum Software</span>
+                    <p class="exp-desc">Verantwoordelijk voor contentbeheer en afstemming met stakeholders. Coördineren van (deel)projecten met het ontwikkelteam en bewaken van de planning.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Ondernemer (Vintage audio & design)</span>
+                        <span class="exp-date">2022 - Heden</span>
+                    </div>
+                    <span class="exp-company">De oude school</span>
+                    <p class="exp-desc">Restauratie en in- en verkoop van vintage audioapparatuur en designmeubels. Beheren van het volledige traject: inkoop, diagnose, reparatie, testen en klantcontact met een sterke focus op esthetische afwerking.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Product Owner Digitaal Platform & App</span>
+                        <span class="exp-date">2019 - 2022</span>
+                    </div>
+                    <span class="exp-company">Quiet Nederland</span>
+                    <p class="exp-desc">Verantwoordelijk voor ontwikkeling en onderhoud van platform en app. Vertalen van gebruikersbehoeften naar concrete features, beheren van de backlog en bewaken van voortgang en kwaliteit.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Business Owner & R&D Ontwikkelaar</span>
+                        <span class="exp-date">2014 - 2019</span>
+                    </div>
+                    <span class="exp-company">Lach Je Lens</span>
+                    <p class="exp-desc">Ontwerpen, ontwikkelen en testen van apparatuur inclusief hardware-software-integratie. Foutanalyse en iteratieve verbeteringen op basis van gebruikerstesten.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
             min-height: 297mm;
             background: var(--white);
             margin: 0 auto;
